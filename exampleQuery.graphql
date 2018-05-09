@@ -1,0 +1,23 @@
+query Artists {
+  artists {
+    name
+    id
+    songs {
+      duration
+      id
+      title
+    }
+  }
+}
+
+query ArtistNotFound {
+  artist(id: "404") {
+    name
+  }
+}
+
+query ArtistFound {
+  artist(id: "test") {
+    name
+  }
+}
