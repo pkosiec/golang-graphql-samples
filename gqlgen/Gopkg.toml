@@ -29,6 +29,10 @@
   go-tests = true
   unused-packages = true
 
+  [[prune.project]]
+      name = "github.com/vektah/gqlgen"
+      unused-packages = false
+
 [[constraint]]
   branch = "master"
   name = "github.com/vektah/gqlgen"

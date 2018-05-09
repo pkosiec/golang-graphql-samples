@@ -8,23 +8,43 @@
   version = "v1.2.0"
 
 [[projects]]
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
+  version = "v0.8.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/vektah/gqlgen"
   packages = [
+    ".",
+    "codegen",
+    "codegen/templates",
     "graphql",
     "handler",
     "neelance/common",
     "neelance/errors",
-    "neelance/introspection",
     "neelance/query",
     "neelance/schema",
     "neelance/validation"
   ]
   revision = "3990eacf7d8d99143a69b249ef164787ed00e2ee"
 
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/tools"
+  packages = [
+    "go/ast/astutil",
+    "go/buildutil",
+    "go/loader",
+    "imports",
+    "internal/fastwalk"
+  ]
+  revision = "48418e5732e1b1e2a10207c8007a5f959e422f20"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "3cddb21b1c86c3d6ef83bc6217fe88d8701d7e6ee30d8332a2f8f7de137d4f86"
+  inputs-digest = "26cbfedc4381024b8be2ad827c1e2fa71143eaf6c6ce245bcd6909c5ecd734b2"
   solver-name = "gps-cdcl"
   solver-version = 1
