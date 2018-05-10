@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/pkosiec/golang-graphql-samples/gqlgen/gqlschema"
@@ -19,8 +20,7 @@ func main() {
 	mux.Handle("/graphql", handler.GraphQL(schema))
 
 	addr := fmt.Sprintf("%s:%d", "127.0.0.1", 3000)
-	fmt.Printf("Listening on %s", addr)
+	log.Printf("Listening on %s", addr)
 
 	http.ListenAndServe(addr, mux)
-
 }

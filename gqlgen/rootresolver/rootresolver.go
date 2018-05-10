@@ -3,7 +3,7 @@ package rootresolver
 import (
 	"context"
 	"errors"
-	"fmt"
+	"log"
 
 	"github.com/pkosiec/golang-graphql-samples/gqlgen/gqlschema"
 )
@@ -18,7 +18,7 @@ func (r *RootResolver) Artist_songs(ctx context.Context, obj *gqlschema.Artist) 
 	if obj == nil {
 		return []gqlschema.Song{}, errors.New("obj is nil")
 	}
-	fmt.Printf("\nArtists songs for %s\n", obj.Name)
+	log.Printf("\nArtists songs for %s\n", obj.Name)
 
 	return []gqlschema.Song{
 		{

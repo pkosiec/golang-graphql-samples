@@ -22,8 +22,6 @@ func main() {
 	})
 
 	addr := fmt.Sprintf("%s:%d", "127.0.0.1", 3000)
-	fmt.Printf("Listening on %s", addr)
-
+	log.Printf("Listening on %s", addr)
 	http.ListenAndServe(addr, handler)
-
 }

@@ -2,7 +2,7 @@ package schema
 
 import (
 	"errors"
-	"fmt"
+	"log"
 
 	"github.com/graphql-go/graphql"
 )
@@ -36,7 +36,7 @@ func New() (graphql.Schema, error) {
 					},
 				},
 				"artists": &graphql.Field{
-					Name:        "Artists",
+					Name:        "Artists Query",
 					Description: "Get all artists",
 					Type:        graphql.NewNonNull(graphql.NewList(ArtistType)),
 					Resolve: func(params graphql.ResolveParams) (interface{}, error) {
@@ -53,17 +53,18 @@ func New() (graphql.Schema, error) {
 		Mutation: nil,
 	}
 
+	// Field for ArtistType: songs: [Song!]!
 	ArtistType.AddFieldConfig("songs", &graphql.Field{
 		Type:        graphql.NewNonNull(graphql.NewList(graphql.NewNonNull(SongType))),
 		Name:        "Songs",
-		Description: "Songs",
+		Description: "Songs field description",
 		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 			root, ok := params.Source.(Artist)
 			if !ok {
 				return nil, errors.New("source is nil")
 			}
 
-			fmt.Printf("\nArtists songs for %s\n", root.Name)
+			log.Printf("\nArtists songs for %s\n", root.Name)
 
 			return []Song{
 				{
