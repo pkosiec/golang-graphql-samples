@@ -5,7 +5,7 @@ import "github.com/graphql-go/graphql"
 // type Artist {
 // 		id: ID!
 // 		name: String!
-//   }
+// }
 var ArtistType = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name:        "Artist",
